@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  background-color: black;
+  color: white;
+}
+
+.inst {
+  position: absolute;
+  right: 0;
+  top: 25px;
+}
+
+#end {
+  position: absolute;
+  top: 0;
+  left: 45%;
+  display: none;
+}
