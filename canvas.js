@@ -5,16 +5,16 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 var c = canvas.getContext("2d");
 
-const pi = Math.PI;
+const ballRadius = 15, x = canvas.width / 2, pi = Math.PI;
 var fin, //handles animation frame
   y = canvas.height / 2, //position of ball
   dy = 0,
   ballPos, //temp variable for ball
-  score = 0;
-const ballRadius = 15, x = canvas.width / 2;
+  score = 0,
+  rotSpeed = pi/180;
+
 
 if (localStorage.getItem("highScore") == null) localStorage.setItem("highScore", 0);
-
 
 //obstacle
 
@@ -59,8 +59,8 @@ class Obs {
       this.start = 0;
       this.end = pi;
     }
-    this.start += pi / 180;
-    this.end += pi / 180;
+    this.start += rotSpeed;
+    this.end += rotSpeed;
   }
 
   checkCollsion() {
@@ -107,9 +107,12 @@ class Obs {
 //updating Score
 setInterval(function() {
   document.getElementById("score").textContent = "Score : " + score;
+  if(localStorage.getItem("highScore")<score){
+    document.getElementById("high").textContent = "High Score : " + score;
+  }
+  else document.getElementById("high").textContent = "High Score : " + localStorage.getItem("highScore");
 }, 1);
 
-document.getElementById("high").textContent = "High Score : " + localStorage.getItem("highScore");
 
 
 

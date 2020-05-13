@@ -10,6 +10,25 @@ body {
   top: 25px;
 }
 
+.diff {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 6%;
+}
+
+#pause {
+  position: absolute;
+  right: 25%;
+  top: 25px;
+  color: #ff7315;
+}
+
+#pause:hover {
+  color: white;
+  cursor: pointer;
+}
+
 #end {
   position: absolute;
   top: 0;
